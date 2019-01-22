@@ -1,6 +1,7 @@
 org: "drycc"
 pull_policy: "Always"
-docker_tag: canary
+docker_tag: "canary"
+docker_registry: ""
 versions_api_url: https://versions-staging.drycc.com
 doctor_api_url: https://doctor-staging.drycc.com
 # limits_cpu: "100m"
