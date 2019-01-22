@@ -23,12 +23,12 @@ for the get component by release operation typically these are written to a http
 type GetComponentByReleaseParams struct {
 
 	/*Component
-	  A component is a single deis component, e.g., deis-router
+	  A component is a single drycc component, e.g., drycc-router
 
 	*/
 	Component string
 	/*Release
-	  The release version of the deis component, eg., 2.0.0-beta2
+	  The release version of the drycc component, eg., 2.0.0-beta2
 
 	*/
 	Release string

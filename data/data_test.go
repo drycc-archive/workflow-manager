@@ -5,8 +5,8 @@ import (
 	"testing"
 
 	"github.com/arschles/assert"
-	"github.com/deis/workflow-manager/mocks"
-	"github.com/deis/workflow-manager/pkg/swagger/models"
+	"github.com/drycc/workflow-manager/mocks"
+	"github.com/drycc/workflow-manager/pkg/swagger/models"
 )
 
 const mockClusterID = "f91378a6-a815-4c20-9b0d-77b205cd3ba4"
@@ -113,7 +113,7 @@ func TestAddUpdateData(t *testing.T) {
 	err := AddUpdateData(&mockCluster, mocks.LatestMockData{})
 	assert.NoErr(t, err)
 	//TODO: when newestVersion is implemented, actually test for the addition of "UpdateAvailable" fields.
-	// tracked in https://github.com/teamhephy/workflow-manager/issues/52
+	// tracked in https://github.com/drycc/workflow-manager/issues/52
 }
 
 func TestGetInstalled(t *testing.T) {

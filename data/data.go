@@ -6,13 +6,13 @@ import (
 	"log"
 	"strings"
 
-	"github.com/deis/workflow-manager/config"
-	"github.com/deis/workflow-manager/k8s"
-	"github.com/deis/workflow-manager/pkg/swagger/models"
+	"github.com/drycc/workflow-manager/config"
+	"github.com/drycc/workflow-manager/k8s"
+	"github.com/drycc/workflow-manager/pkg/swagger/models"
 )
 
 const (
-	wfmSecretName      = "deis-workflow-manager"
+	wfmSecretName      = "drycc-workflow-manager"
 	clusterIDSecretKey = "cluster-id"
 )
 
@@ -88,7 +88,7 @@ func GetInstalled(g InstalledData) (models.Cluster, error) {
 	return cluster, nil
 }
 
-// GetLatestVersion returns the latest known version of a deis component
+// GetLatestVersion returns the latest known version of a drycc component
 func GetLatestVersion(
 	component string,
 	cluster models.Cluster,
@@ -146,7 +146,7 @@ func GetDoctorInfo(
 		return models.DoctorInfo{}, err
 	}
 	nodes := getK8sNodes(k)
-	namespaces := []*models.Namespace{getK8sDeisNamespace(k)}
+	namespaces := []*models.Namespace{getK8sDryccNamespace(k)}
 	doctor := models.DoctorInfo{
 		Workflow:   &cluster,
 		Nodes:      nodes,
@@ -155,9 +155,9 @@ func GetDoctorInfo(
 	return doctor, nil
 }
 
-// getK8sDeisNamespace is a helper function that returns data
-// from the "deis" K8s namespace for RESTful consumption
-func getK8sDeisNamespace(k k8s.RunningK8sData) *models.Namespace {
+// getK8sDryccNamespace is a helper function that returns data
+// from the "drycc" K8s namespace for RESTful consumption
+func getK8sDryccNamespace(k k8s.RunningK8sData) *models.Namespace {
 	pods, err := k8s.GetPodsModels(k)
 	if err != nil {
 		log.Printf("unable to get K8s pods data: %#v", err)
@@ -187,7 +187,7 @@ func getK8sDeisNamespace(k k8s.RunningK8sData) *models.Namespace {
 		log.Printf("unable to get K8s events data: %#v", err)
 	}
 	return &models.Namespace{
-		Name:                   config.Spec.DeisNamespace,
+		Name:                   config.Spec.DryccNamespace,
 		DaemonSets:             daemonSets,
 		Deployments:            deployments,
 		Events:                 events,

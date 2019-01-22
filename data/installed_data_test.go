@@ -3,19 +3,19 @@ package data
 import (
 	"testing"
 
-	"github.com/deis/workflow-manager/k8s"
+	"github.com/drycc/workflow-manager/k8s"
 	"k8s.io/kubernetes/pkg/api"
 	"k8s.io/kubernetes/pkg/api/testapi"
 	"k8s.io/kubernetes/pkg/apis/extensions"
 	"k8s.io/kubernetes/pkg/client/unversioned/testclient/simple"
 )
 
-const namespace = "deis"
+const namespace = "drycc"
 
-func TestInstalledDeisData(t *testing.T) {
+func TestInstalledDryccData(t *testing.T) {
 	client := getK8sClient(t)
 	k := k8s.NewResourceInterfaceNamespaced(client, namespace)
-	installedData := installedDeisData{
+	installedData := installedDryccData{
 		k8sResources: k,
 	}
 	_, _ = installedData.Get()
@@ -33,7 +33,7 @@ func getK8sClient(t *testing.T) *simple.Client {
 				Items: []extensions.Deployment{
 					{
 						ObjectMeta: api.ObjectMeta{
-							Name: "deis-builder",
+							Name: "drycc-builder",
 						},
 						Spec: extensions.DeploymentSpec{
 							Template: api.PodTemplateSpec{

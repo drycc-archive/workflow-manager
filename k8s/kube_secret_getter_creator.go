@@ -1,7 +1,7 @@
 package k8s
 
 import (
-	"github.com/deis/kubeapp/api/secret"
+	"github.com/drycc/kubeapp/api/secret"
 )
 
 // KubeSecretGetterCreator is a composition of secret.Getter and secret.Creator. Please refer to the Godoc for those two interfaces (https://godoc.org/github.com/arschles/kubeapp/api/secret)

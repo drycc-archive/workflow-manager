@@ -4,7 +4,7 @@
     {
       "component": {
         "name": "controller",
-        "description": "deis controller"
+        "description": "drycc controller"
       },
       "version": {
         "train": "stable",
@@ -14,7 +14,7 @@
     {
       "component": {
         "name": "router",
-        "description": "deis router"
+        "description": "drycc router"
       },
       "version": {
         "train": "stable",
@@ -24,7 +24,7 @@
     {
       "component": {
         "name": "builder",
-        "description": "deis builder"
+        "description": "drycc builder"
       },
       "version": {
         "train": "stable",

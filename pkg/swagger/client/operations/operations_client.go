@@ -123,7 +123,7 @@ func (a *Client) GetClustersByAge(params *GetClustersByAgeParams) (*GetClustersB
 }
 
 /*
-GetClustersCount reads the count of the known deis clusters
+GetClustersCount reads the count of the known drycc clusters
 */
 func (a *Client) GetClustersCount(params *GetClustersCountParams) (*GetClustersCountOK, error) {
 	// TODO: Validate the params before sending

@@ -1,7 +1,7 @@
 name: workflow-manager
-home: https://github.com/teamhephy/workflow-manager
+home: https://github.com/drycc/workflow-manager
 version:  <Will be populated by the ci before publishing the chart>
-description: "Deis Workflow Manager: Cluster First Aid"
+description: "Drycc Workflow Manager: Cluster First Aid"
 maintainers:
-  - name: Deis Team
-    email: engineering@deis.com
+  - name: Drycc Team
+    email: engineering@drycc.com

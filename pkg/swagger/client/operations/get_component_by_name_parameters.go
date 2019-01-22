@@ -23,7 +23,7 @@ for the get component by name operation typically these are written to a http.Re
 type GetComponentByNameParams struct {
 
 	/*Component
-	  A component is a single deis component, e.g., deis-router
+	  A component is a single drycc component, e.g., drycc-router
 
 	*/
 	Component string

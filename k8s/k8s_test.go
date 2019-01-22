@@ -11,12 +11,12 @@ import (
 	"k8s.io/kubernetes/pkg/client/unversioned/testclient/simple"
 )
 
-const namespace = "deis"
+const namespace = "drycc"
 
 func TestRunningK8sDataDaemonsets(t *testing.T) {
 	c := getK8sClientForDaemonSets(t)
-	deisK8sResources := NewResourceInterfaceNamespaced(c, namespace)
-	runningK8sData := NewRunningK8sData(deisK8sResources)
+	dryccK8sResources := NewResourceInterfaceNamespaced(c, namespace)
+	runningK8sData := NewRunningK8sData(dryccK8sResources)
 	daemonsets, err := runningK8sData.DaemonSets()
 	assert.NoErr(t, err)
 	assert.True(t, len(daemonsets) == 2, "daemonsets response slice was not the expected length")
@@ -25,8 +25,8 @@ func TestRunningK8sDataDaemonsets(t *testing.T) {
 
 func TestRunningK8sDataDeployments(t *testing.T) {
 	c := getK8sClientForDeployments(t)
-	deisK8sResources := NewResourceInterfaceNamespaced(c, namespace)
-	runningK8sData := NewRunningK8sData(deisK8sResources)
+	dryccK8sResources := NewResourceInterfaceNamespaced(c, namespace)
+	runningK8sData := NewRunningK8sData(dryccK8sResources)
 	deployments, err := runningK8sData.Deployments()
 	assert.NoErr(t, err)
 	assert.True(t, len(deployments) == 2, "deployments response slice was not the expected length")
@@ -35,8 +35,8 @@ func TestRunningK8sDataDeployments(t *testing.T) {
 
 func TestRunningK8sDataEvents(t *testing.T) {
 	c := getK8sClientForEvents(t)
-	deisK8sResources := NewResourceInterfaceNamespaced(c, namespace)
-	runningK8sData := NewRunningK8sData(deisK8sResources)
+	dryccK8sResources := NewResourceInterfaceNamespaced(c, namespace)
+	runningK8sData := NewRunningK8sData(dryccK8sResources)
 	events, err := runningK8sData.Events()
 	assert.NoErr(t, err)
 	assert.True(t, len(events) == 2, "events response slice was not the expected length")
@@ -45,8 +45,8 @@ func TestRunningK8sDataEvents(t *testing.T) {
 
 func TestRunningK8sDataNodes(t *testing.T) {
 	c := getK8sClientForNodes(t)
-	deisK8sResources := NewResourceInterfaceNamespaced(c, namespace)
-	runningK8sData := NewRunningK8sData(deisK8sResources)
+	dryccK8sResources := NewResourceInterfaceNamespaced(c, namespace)
+	runningK8sData := NewRunningK8sData(dryccK8sResources)
 	nodes, err := runningK8sData.Nodes()
 	assert.NoErr(t, err)
 	assert.True(t, len(nodes) == 3, "nodes response slice was not the expected length")
@@ -55,8 +55,8 @@ func TestRunningK8sDataNodes(t *testing.T) {
 
 func TestRunningK8sDataPods(t *testing.T) {
 	c := getK8sClientForPods(t)
-	deisK8sResources := NewResourceInterfaceNamespaced(c, namespace)
-	runningK8sData := NewRunningK8sData(deisK8sResources)
+	dryccK8sResources := NewResourceInterfaceNamespaced(c, namespace)
+	runningK8sData := NewRunningK8sData(dryccK8sResources)
 	pods, err := runningK8sData.Pods()
 	assert.NoErr(t, err)
 	assert.True(t, len(pods) == 2, "pods response slice was not the expected length")
@@ -65,8 +65,8 @@ func TestRunningK8sDataPods(t *testing.T) {
 
 func TestRunningK8sDataReplicaSets(t *testing.T) {
 	c := getK8sClientForReplicaSets(t)
-	deisK8sResources := NewResourceInterfaceNamespaced(c, namespace)
-	runningK8sData := NewRunningK8sData(deisK8sResources)
+	dryccK8sResources := NewResourceInterfaceNamespaced(c, namespace)
+	runningK8sData := NewRunningK8sData(dryccK8sResources)
 	replicaSets, err := runningK8sData.ReplicaSets()
 	assert.NoErr(t, err)
 	assert.True(t, len(replicaSets) == 2, "replica sets response slice was not the expected length")
@@ -75,8 +75,8 @@ func TestRunningK8sDataReplicaSets(t *testing.T) {
 
 func TestRunningK8sDataReplicationControllers(t *testing.T) {
 	c := getK8sClientForReplicationControllers(t)
-	deisK8sResources := NewResourceInterfaceNamespaced(c, namespace)
-	runningK8sData := NewRunningK8sData(deisK8sResources)
+	dryccK8sResources := NewResourceInterfaceNamespaced(c, namespace)
+	runningK8sData := NewRunningK8sData(dryccK8sResources)
 	rcs, err := runningK8sData.ReplicationControllers()
 	assert.NoErr(t, err)
 	assert.True(t, len(rcs) == 2, "rc response slice was not the expected length")
@@ -86,8 +86,8 @@ func TestRunningK8sDataReplicationControllers(t *testing.T) {
 func TestRunningK8sDataServices(t *testing.T) {
 	c := getK8sClientForServices(t)
 	//_, _ = c.Setup(t).Services(namespace).List(api.ListOptions{})
-	deisK8sResources := NewResourceInterfaceNamespaced(c, namespace)
-	runningK8sData := NewRunningK8sData(deisK8sResources)
+	dryccK8sResources := NewResourceInterfaceNamespaced(c, namespace)
+	runningK8sData := NewRunningK8sData(dryccK8sResources)
 	services, err := runningK8sData.Services()
 	assert.NoErr(t, err)
 	assert.True(t, len(services) == 2, "services response slice was not the expected length")
@@ -105,12 +105,12 @@ func getK8sClientForDaemonSets(t *testing.T) *simple.Client {
 				Items: []extensions.DaemonSet{
 					{
 						ObjectMeta: api.ObjectMeta{
-							Name: "deis-logger-fluentd",
+							Name: "drycc-logger-fluentd",
 						},
 					},
 					{
 						ObjectMeta: api.ObjectMeta{
-							Name: "deis-monitor-telegraf",
+							Name: "drycc-monitor-telegraf",
 						},
 					},
 				},
@@ -131,12 +131,12 @@ func getK8sClientForDeployments(t *testing.T) *simple.Client {
 				Items: []extensions.Deployment{
 					{
 						ObjectMeta: api.ObjectMeta{
-							Name: "deis-builder",
+							Name: "drycc-builder",
 						},
 					},
 					{
 						ObjectMeta: api.ObjectMeta{
-							Name: "deis-router",
+							Name: "drycc-router",
 						},
 					},
 				},
@@ -150,7 +150,7 @@ func getK8sClientForEvents(t *testing.T) *simple.Client {
 	obj1Reference := &api.ObjectReference{
 		Kind:            "Pod",
 		Namespace:       namespace,
-		Name:            "deis-builder-900960817-h9zmm",
+		Name:            "drycc-builder-900960817-h9zmm",
 		UID:             "uid",
 		APIVersion:      "v1",
 		ResourceVersion: "1477748",
@@ -158,7 +158,7 @@ func getK8sClientForEvents(t *testing.T) *simple.Client {
 	obj2Reference := &api.ObjectReference{
 		Kind:            "Pod",
 		Namespace:       namespace,
-		Name:            "deis-controller-139932026-oltfd",
+		Name:            "drycc-controller-139932026-oltfd",
 		UID:             "uid",
 		APIVersion:      "v1",
 		ResourceVersion: "1477762",
@@ -245,12 +245,12 @@ func getK8sClientForPods(t *testing.T) *simple.Client {
 				Items: []api.Pod{
 					{
 						ObjectMeta: api.ObjectMeta{
-							Name: "deis-builder-900960817-h9zmm",
+							Name: "drycc-builder-900960817-h9zmm",
 						},
 					},
 					{
 						ObjectMeta: api.ObjectMeta{
-							Name: "deis-controller-139932026-oltfd",
+							Name: "drycc-controller-139932026-oltfd",
 						},
 					},
 				},
@@ -271,12 +271,12 @@ func getK8sClientForReplicaSets(t *testing.T) *simple.Client {
 				Items: []extensions.ReplicaSet{
 					{
 						ObjectMeta: api.ObjectMeta{
-							Name: "deis-builder-900960817",
+							Name: "drycc-builder-900960817",
 						},
 					},
 					{
 						ObjectMeta: api.ObjectMeta{
-							Name: "deis-controller-139932026",
+							Name: "drycc-controller-139932026",
 						},
 					},
 				},
@@ -297,12 +297,12 @@ func getK8sClientForReplicationControllers(t *testing.T) *simple.Client {
 				Items: []api.ReplicationController{
 					{
 						ObjectMeta: api.ObjectMeta{
-							Name: "deis-builder",
+							Name: "drycc-builder",
 						},
 					},
 					{
 						ObjectMeta: api.ObjectMeta{
-							Name: "deis-controller",
+							Name: "drycc-controller",
 						},
 					},
 				},
@@ -323,12 +323,12 @@ func getK8sClientForServices(t *testing.T) *simple.Client {
 				Items: []api.Service{
 					{
 						ObjectMeta: api.ObjectMeta{
-							Name: "deis-builder",
+							Name: "drycc-builder",
 						},
 					},
 					{
 						ObjectMeta: api.ObjectMeta{
-							Name: "deis-controller",
+							Name: "drycc-controller",
 						},
 					},
 				},

@@ -1,17 +1,17 @@
 
-# Deis Workflow Manager
+# Drycc Workflow Manager
 
-[![Build Status](https://travis-ci.org/deis/workflow-manager.svg?branch=master)](https://travis-ci.org/deis/workflow-manager) [![codecov](https://codecov.io/gh/deis/workflow-manager/branch/master/graph/badge.svg)](https://codecov.io/gh/deis/workflow-manager)
- [![Go Report Card](https://goreportcard.com/badge/github.com/deis/workflow-manager)](https://goreportcard.com/report/github.com/deis/workflow-manager) [![codebeat badge](https://codebeat.co/badges/29e2c379-0490-45db-95fe-20b25bd5a466)](https://codebeat.co/projects/github-com-deis-workflow-manager)
-[![Docker Repository on Quay](https://quay.io/repository/deis/workflow-manager/status "Docker Repository on Quay")](https://quay.io/repository/deis/workflow-manager)
+[![Build Status](https://travis-ci.org/drycc/workflow-manager.svg?branch=master)](https://travis-ci.org/drycc/workflow-manager) [![codecov](https://codecov.io/gh/drycc/workflow-manager/branch/master/graph/badge.svg)](https://codecov.io/gh/drycc/workflow-manager)
+ [![Go Report Card](https://goreportcard.com/badge/github.com/drycc/workflow-manager)](https://goreportcard.com/report/github.com/drycc/workflow-manager) [![codebeat badge](https://codebeat.co/badges/29e2c379-0490-45db-95fe-20b25bd5a466)](https://codebeat.co/projects/github-com-drycc-workflow-manager)
+[![Docker Repository on Quay](https://quay.io/repository/drycc/workflow-manager/status "Docker Repository on Quay")](https://quay.io/repository/drycc/workflow-manager)
 
-This repository contains the manager component for Deis Workflow. Deis
+This repository contains the manager component for Drycc Workflow. Drycc
 (pronounced DAY-iss) Workflow is an open source Platform as a Service (PaaS)
 that adds a developer-friendly layer to any [Kubernetes][k8s-home] cluster,
 making it easy to deploy and manage applications on your own servers.
 
-For more information about Deis Workflow, please visit the main project page at
-https://github.com/teamhephy/workflow.
+For more information about Drycc Workflow, please visit the main project page at
+https://github.com/drycc/workflow.
 
 We welcome your input! If you have feedback on Workflow Manager,
 please [submit an issue][issues]. If you'd like to participate in development,
@@ -26,7 +26,7 @@ simply out of date, Workflow operators will know at a glance.
 
 By default, Workflow Manager will make version checks to an external service.
 This submits component and version information to our versions service running
-at [https://versions.deis.com](https://versions.deis.com). If you prefer this
+at [https://versions.drycc.com](https://versions.drycc.com). If you prefer this
 check not happen, you may disable the function by setting
 `WORKFLOW_MANAGER_CHECKVERSIONS` to `false` in the Workflow Manager's
 Replication Controller.
@@ -36,13 +36,13 @@ Replication Controller.
 Deployed closest to any potential problem, Workflow Manager is also designed to
 help when things aren't going well. To aid troubleshooting efforts cluster
 operators will be able to easily gather and securely submit cluster health and
-status information to the Deis team.
+status information to the Drycc team.
 
 Functionality will be added in a later release.
 
 # Development
 
-The Deis project welcomes contributions from all developers. The high level
+The Drycc project welcomes contributions from all developers. The high level
 process for development matches many other open source projects. See below for
 an outline.
 
@@ -50,13 +50,13 @@ an outline.
 * Make your changes
 * [Submit a pull request][prs] (PR) to this repository with your changes, and unit tests whenever possible
     * If your PR fixes any [issues][issues], make sure you write `Fixes #1234` in your PR description (where `#1234` is the number of the issue you're closing)
-* The Deis core contributors will review your code. After each of them sign off on your code, they'll label your PR with `LGTM1` and `LGTM2` (respectively). Once that happens, a contributor will merge it
+* The Drycc core contributors will review your code. After each of them sign off on your code, they'll label your PR with `LGTM1` and `LGTM2` (respectively). Once that happens, a contributor will merge it
 
 ## Docker Based Development Environment
 
 The preferred environment for development uses [the `go-dev` Docker
-image](https://github.com/teamhephy/docker-go-dev). The tools described in this
-section are used to build, test, package and release each version of Deis.
+image](https://github.com/drycc/docker-go-dev). The tools described in this
+section are used to build, test, package and release each version of Drycc.
 
 To use it yourself, you must have [make](https://www.gnu.org/software/make/)
 installed and Docker installed and running on your local development machine.
@@ -81,12 +81,12 @@ of development.
 
 # Testing
 
-The Deis project requires that as much code as possible is unit tested, but the
+The Drycc project requires that as much code as possible is unit tested, but the
 core contributors also recognize that some code must be tested at a higher
 level (functional or integration tests, for example).
 
 
-[issues]: https://github.com/teamhephy/workflow-manager/issues
-[prs]: https://github.com/teamhephy/workflow-manager/pulls
+[issues]: https://github.com/drycc/workflow-manager/issues
+[prs]: https://github.com/drycc/workflow-manager/pulls
 [k8s-home]: https://kubernetes.io
-[v2.18]: https://github.com/teamhephy/workflow/releases/tag/v2.18.0
+[v2.18]: https://github.com/drycc/workflow/releases/tag/v2.18.0

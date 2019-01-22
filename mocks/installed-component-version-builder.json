@@ -1,7 +1,7 @@
 {
   "component": {
     "name": "builder",
-    "description": "deis builder"
+    "description": "drycc builder"
   },
   "version": {
     "train": "stable",

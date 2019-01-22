@@ -1,4 +1,4 @@
-package: github.com/deis/workflow-manager
+package: github.com/drycc/workflow-manager
 import:
 - package: github.com/gorilla/mux
 - package: github.com/satori/go.uuid
@@ -17,6 +17,6 @@ import:
   repo: https://github.com/belua/inf
   vcs: git
 - package: github.com/arschles/testsrv
-- package: github.com/deis/kubeapp
+- package: github.com/drycc/kubeapp
   subpackages:
   - api

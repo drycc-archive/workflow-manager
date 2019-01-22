@@ -15,7 +15,7 @@ import (
 
 	strfmt "github.com/go-swagger/go-swagger/strfmt"
 
-	"github.com/deis/workflow-manager/pkg/swagger/models"
+	"github.com/drycc/workflow-manager/pkg/swagger/models"
 )
 
 // GetComponentsByLatestReleaseForV2Reader is a Reader for the GetComponentsByLatestReleaseForV2 structure.

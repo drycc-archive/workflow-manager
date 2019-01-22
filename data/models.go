@@ -1,7 +1,7 @@
 package data
 
 import (
-	"github.com/deis/workflow-manager/pkg/swagger/models"
+	"github.com/drycc/workflow-manager/pkg/swagger/models"
 )
 
 // SparseComponentInfo is the JSON compatible struct that holds limited data about a component

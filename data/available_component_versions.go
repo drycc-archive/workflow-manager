@@ -1,8 +1,8 @@
 package data
 
 import (
-	"github.com/deis/workflow-manager/k8s"
-	"github.com/deis/workflow-manager/pkg/swagger/models"
+	"github.com/drycc/workflow-manager/k8s"
+	"github.com/drycc/workflow-manager/pkg/swagger/models"
 )
 
 // AvailableComponentVersion is an interface for managing component version data

@@ -4,11 +4,11 @@ import (
 	"log"
 	"time"
 
-	"github.com/deis/workflow-manager/config"
-	"github.com/deis/workflow-manager/data"
-	"github.com/deis/workflow-manager/k8s"
-	apiclient "github.com/deis/workflow-manager/pkg/swagger/client"
-	"github.com/deis/workflow-manager/pkg/swagger/client/operations"
+	"github.com/drycc/workflow-manager/config"
+	"github.com/drycc/workflow-manager/data"
+	"github.com/drycc/workflow-manager/k8s"
+	apiclient "github.com/drycc/workflow-manager/pkg/swagger/client"
+	"github.com/drycc/workflow-manager/pkg/swagger/client/operations"
 )
 
 // Periodic is an interface for managing periodic job invocation
@@ -143,7 +143,7 @@ func sendVersionsImpl(
 	availableVersions data.AvailableVersions,
 ) error {
 	cluster, err := data.GetCluster(
-		data.NewInstalledDeisData(k8sResources),
+		data.NewInstalledDryccData(k8sResources),
 		clusterID,
 		data.NewLatestReleasedComponent(k8sResources, availableVersions),
 	)

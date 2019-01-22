@@ -3,10 +3,10 @@ package data
 import (
 	"sync"
 
-	"github.com/deis/workflow-manager/config"
-	apiclient "github.com/deis/workflow-manager/pkg/swagger/client"
-	"github.com/deis/workflow-manager/pkg/swagger/client/operations"
-	"github.com/deis/workflow-manager/pkg/swagger/models"
+	"github.com/drycc/workflow-manager/config"
+	apiclient "github.com/drycc/workflow-manager/pkg/swagger/client"
+	"github.com/drycc/workflow-manager/pkg/swagger/client/operations"
+	"github.com/drycc/workflow-manager/pkg/swagger/models"
 )
 
 // AvailableVersions is an interface for managing available component version data

@@ -1,11 +1,11 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: deis-workflow-manager
+  name: drycc-workflow-manager
   labels:
-    heritage: deis
+    heritage: drycc
   annotations:
-    component.deis.io/version: {{ .Values.docker_tag }}
+    component.drycc.cc/version: {{ .Values.docker_tag }}
 spec:
   replicas: 1
   strategy:
@@ -15,15 +15,15 @@ spec:
     type: RollingUpdate
   selector:
     matchLabels:
-      app: deis-workflow-manager
+      app: drycc-workflow-manager
   template:
     metadata:
       labels:
-        app: deis-workflow-manager
+        app: drycc-workflow-manager
     spec:
-      serviceAccount: deis-workflow-manager
+      serviceAccount: drycc-workflow-manager
       containers:
-      - name: deis-workflow-manager
+      - name: drycc-workflow-manager
         image: quay.io/{{.Values.org}}/workflow-manager:{{.Values.docker_tag}}
         imagePullPolicy: {{.Values.pull_policy}}
 {{- if or (.Values.limits_cpu) (.Values.limits_memory)}}
@@ -53,7 +53,7 @@ spec:
           value: "true"
         - name: API_VERSION
           value: "v2"
-        - name: DEIS_NAMESPACE
+        - name: DRYCC_NAMESPACE
           valueFrom:
             fieldRef:
               fieldPath: metadata.namespace

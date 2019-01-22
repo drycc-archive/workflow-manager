@@ -3,8 +3,8 @@ package data
 import (
 	"encoding/json"
 
-	"github.com/deis/workflow-manager/k8s"
-	"github.com/deis/workflow-manager/pkg/swagger/models"
+	"github.com/drycc/workflow-manager/k8s"
+	"github.com/drycc/workflow-manager/pkg/swagger/models"
 )
 
 var (
@@ -13,7 +13,7 @@ var (
 	rcType         = "Replication Controller"
 )
 
-const versionAnnotation = "component.deis.io/version"
+const versionAnnotation = "component.drycc.cc/version"
 
 // InstalledData is an interface for managing installed cluster metadata
 type InstalledData interface {
@@ -21,18 +21,18 @@ type InstalledData interface {
 	Get() ([]byte, error)
 }
 
-// InstalledDeisData fulfills the InstalledData interface
-type installedDeisData struct {
+// InstalledDryccData fulfills the InstalledData interface
+type installedDryccData struct {
 	k8sResources *k8s.ResourceInterfaceNamespaced
 }
 
-// NewInstalledDeisData returns a new InstalledDeisData using rcl as the rc.Lister implementation
-func NewInstalledDeisData(ri *k8s.ResourceInterfaceNamespaced) InstalledData {
-	return &installedDeisData{k8sResources: ri}
+// NewInstalledDryccData returns a new InstalledDryccData using rcl as the rc.Lister implementation
+func NewInstalledDryccData(ri *k8s.ResourceInterfaceNamespaced) InstalledData {
+	return &installedDryccData{k8sResources: ri}
 }
 
-// Get method for InstalledDeisData
-func (g *installedDeisData) Get() ([]byte, error) {
+// Get method for InstalledDryccData
+func (g *installedDryccData) Get() ([]byte, error) {
 	var cluster models.Cluster
 	deployments, err := k8s.GetDeployments(g.k8sResources.Deployments())
 	if err != nil {

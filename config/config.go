@@ -1,7 +1,7 @@
 package config
 
 import (
-	apiclient "github.com/deis/workflow-manager/pkg/swagger/client"
+	apiclient "github.com/drycc/workflow-manager/pkg/swagger/client"
 	httptransport "github.com/go-swagger/go-swagger/httpkit/client"
 	"github.com/kelseyhightower/envconfig"
 	"net/url"
@@ -11,11 +11,11 @@ import (
 type Specification struct {
 	Port           string `default:"8080" envconfig:"PORT"`
 	Polling        int    `default:"43200" envconfig:"POLL_INTERVAL_SEC"` // 43200 seconds = 12 hours
-	VersionsAPIURL string `envconfig:"VERSIONS_API_URL" default:"https://versions-staging.deis.com"`
-	DoctorAPIURL   string `envconfig:"DOCTOR_API_URL" default:"https://doctor-staging.deis.com"`
+	VersionsAPIURL string `envconfig:"VERSIONS_API_URL" default:"https://versions-staging.drycc.com"`
+	DoctorAPIURL   string `envconfig:"DOCTOR_API_URL" default:"https://doctor-staging.drycc.com"`
 	APIVersion     string `envconfig:"API_VERSION" default:"v3"`
 	CheckVersions  bool   `default:"true" envconfig:"CHECK_VERSIONS"`
-	DeisNamespace  string `default:"deis" envconfig:"DEIS_NAMESPACE"`
+	DryccNamespace  string `default:"drycc" envconfig:"DRYCC_NAMESPACE"`
 }
 
 // Spec is an exportable variable that contains workflow manager config data

@@ -9,7 +9,7 @@ import (
 
 	strfmt "github.com/go-swagger/go-swagger/strfmt"
 
-	"github.com/deis/workflow-manager/pkg/swagger/client/operations"
+	"github.com/drycc/workflow-manager/pkg/swagger/client/operations"
 )
 
 // Default workflow manager HTTP client.

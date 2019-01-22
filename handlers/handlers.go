@@ -5,11 +5,11 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/deis/workflow-manager/config"
-	"github.com/deis/workflow-manager/data"
-	"github.com/deis/workflow-manager/k8s"
-	apiclient "github.com/deis/workflow-manager/pkg/swagger/client"
-	"github.com/deis/workflow-manager/pkg/swagger/client/operations"
+	"github.com/drycc/workflow-manager/config"
+	"github.com/drycc/workflow-manager/data"
+	"github.com/drycc/workflow-manager/k8s"
+	apiclient "github.com/drycc/workflow-manager/pkg/swagger/client"
+	"github.com/drycc/workflow-manager/pkg/swagger/client/operations"
 	"github.com/gorilla/mux"
 	"github.com/satori/go.uuid"
 )
@@ -29,14 +29,14 @@ func RegisterRoutes(
 
 	clusterID := data.NewClusterIDFromPersistentStorage(k8sResources.Secrets())
 	r.Handle(componentsRoute, ComponentsHandler(
-		data.NewInstalledDeisData(k8sResources),
+		data.NewInstalledDryccData(k8sResources),
 		clusterID,
 		data.NewLatestReleasedComponent(k8sResources, availVers),
 	))
 	r.Handle(idRoute, IDHandler(clusterID))
 	doctorAPIClient, _ := config.GetSwaggerClient(config.Spec.DoctorAPIURL)
 	r.Handle(doctorRoute, DoctorHandler(
-		data.NewInstalledDeisData(k8sResources),
+		data.NewInstalledDryccData(k8sResources),
 		k8s.NewRunningK8sData(k8sResources),
 		clusterID,
 		data.NewLatestReleasedComponent(k8sResources, availVers),

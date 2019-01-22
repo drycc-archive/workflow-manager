@@ -136,7 +136,7 @@ paths:
   /v3/clusters/count:
     get:
       operationId: getClustersCount
-      summary: "read the count of the known deis clusters"
+      summary: "read the count of the known drycc clusters"
       responses:
         200:
           description: clusters count response
@@ -325,13 +325,13 @@ parameters:
     name: component
     type: string
     in: path
-    description: A component is a single deis component, e.g., deis-router
+    description: A component is a single drycc component, e.g., drycc-router
     required: true
   releaseParam:
     name: release
     type: string
     in: path
-    description: The release version of the deis component, eg., 2.0.0-beta2
+    description: The release version of the drycc component, eg., 2.0.0-beta2
     required: true
   UUID:
     name: uuid

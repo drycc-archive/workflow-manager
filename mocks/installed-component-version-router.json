@@ -1,7 +1,7 @@
 {
   "component": {
     "name": "router",
-    "description": "deis router"
+    "description": "drycc router"
   },
   "version": {
     "train": "stable",

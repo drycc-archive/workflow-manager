@@ -3,7 +3,7 @@ package data
 import (
 	"sync"
 
-	"github.com/deis/workflow-manager/k8s"
+	"github.com/drycc/workflow-manager/k8s"
 	"github.com/satori/go.uuid"
 	"k8s.io/kubernetes/pkg/api"
 	apierrors "k8s.io/kubernetes/pkg/api/errors"

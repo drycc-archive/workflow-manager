@@ -9,7 +9,7 @@ import (
 
 	strfmt "github.com/go-swagger/go-swagger/strfmt"
 
-	"github.com/deis/workflow-manager/pkg/swagger/models"
+	"github.com/drycc/workflow-manager/pkg/swagger/models"
 )
 
 // NewPublishComponentReleaseParams creates a new PublishComponentReleaseParams object
@@ -27,12 +27,12 @@ type PublishComponentReleaseParams struct {
 	/*Body*/
 	Body *models.ComponentVersion
 	/*Component
-	  A component is a single deis component, e.g., deis-router
+	  A component is a single drycc component, e.g., drycc-router
 
 	*/
 	Component string
 	/*Release
-	  The release version of the deis component, eg., 2.0.0-beta2
+	  The release version of the drycc component, eg., 2.0.0-beta2
 
 	*/
 	Release string
