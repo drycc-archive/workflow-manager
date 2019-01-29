@@ -1,8 +1,10 @@
 
 # Drycc Workflow Manager
 
-[![Build Status](https://travis-ci.org/drycc/workflow-manager.svg?branch=master)](https://travis-ci.org/drycc/workflow-manager) [![codecov](https://codecov.io/gh/drycc/workflow-manager/branch/master/graph/badge.svg)](https://codecov.io/gh/drycc/workflow-manager)
- [![Go Report Card](https://goreportcard.com/badge/github.com/drycc/workflow-manager)](https://goreportcard.com/report/github.com/drycc/workflow-manager) [![codebeat badge](https://codebeat.co/badges/29e2c379-0490-45db-95fe-20b25bd5a466)](https://codebeat.co/projects/github-com-drycc-workflow-manager)
+[![Build Status](https://travis-ci.org/drycc/workflow-manager.svg?branch=master)](https://travis-ci.org/drycc/workflow-manager)
+[![codecov](https://codecov.io/gh/drycc/workflow-manager/branch/master/graph/badge.svg)](https://codecov.io/gh/drycc/workflow-manager)
+[![Go Report Card](https://goreportcard.com/badge/github.com/drycc/workflow-manager)](https://goreportcard.com/report/github.com/drycc/workflow-manager)
+[![codebeat badge](https://codebeat.co/badges/9bb37e2b-b7e5-4c70-9cbc-ddd26632e394)](https://codebeat.co/projects/github-com-drycc-workflow-manager-master)
 [![Docker Repository on Quay](https://quay.io/repository/drycc/workflow-manager/status "Docker Repository on Quay")](https://quay.io/repository/drycc/workflow-manager)
 
 This repository contains the manager component for Drycc Workflow. Drycc
