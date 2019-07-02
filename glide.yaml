@@ -20,3 +20,6 @@ import:
 - package: github.com/drycc/kubeapp
   subpackages:
   - api
+- package: bitbucket.org/ww/goautoneg
+  repo: https://github.com/rancher/goautoneg
+  vcs: git

@@ -2,7 +2,9 @@ hash: b64e0a5c65cb4f9289e33a902292753e8e66922cf41e3fcd776507f2be156b08
 updated: 2016-07-19T18:06:10.791383535Z
 imports:
 - name: bitbucket.org/ww/goautoneg
-  version: 75cd24fc2f2c
+  version: a547fc61f48d567d5b4ec6f8aee5573d8efce11d
+  repo: https://github.com/rancher/goautoneg
+  vcs: git
 - name: github.com/arschles/assert
   version: fc2da9844984ce5093111298174706e14d4c0c47
 - name: github.com/arschles/testsrv
